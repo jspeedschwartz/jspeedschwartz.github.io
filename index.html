@@ -46,7 +46,16 @@
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-       <a-video src="#vidyeah" width="16" height="9" position="0 0 0"></a-video>
+       <a-entity id="but"
+                    cursor="fuse: true; fuseTimeout: 1000;"
+                    position="0.5 0 0"
+                    rotation="-90 0 0"
+                    geometry="primitive: plane"
+                    scale="1.0 1.0 1.0"
+                    material="color: white; shader: flat; transparent: false;"
+                    visible="true">
+                </a-entity>
+       <a-video src="#vidyeah" width="1" height="1" position="0 0 0"></a-video>
     </a-nft>
     <a-entity camera></a-entity>
   </a-scene>
