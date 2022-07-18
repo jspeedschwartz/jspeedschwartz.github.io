@@ -6,7 +6,10 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
   </head>
   <body>
-	  <div style="position:absolute; top: 100px; left: 100px">Owly Loopy CheCK</div>
+	  <div style="position:absolute; top: 100px; left: 100px">
+		  <button onClick="playvid()">Play</button>
+	  
+	  </div>
     <a-scene mindar-image="imageTargetSrc: mindmaps/logotarget.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
 	<img id="card" src="mindmaps/zoetrope.jpg" />
@@ -28,4 +31,11 @@
       </a-entity>
     </a-scene>
   </body>
+	
+	<script>
+		function playvid(){
+			foo = document.getElementById("vid");
+			foo.play();
+		}
+	</script>
 </html>
