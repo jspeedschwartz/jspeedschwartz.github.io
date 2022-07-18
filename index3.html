@@ -4,6 +4,8 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+	  <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+
 	<script>
 		AFRAME.registerComponent('play-pause', {
 			//commands go here for 'play-pause'
@@ -24,7 +26,7 @@
   </head>
   <body>
 	  <div style="position:absolute; top: 100px; left: 100px">
-		  Find Achmed for Owls - WITH CURSOR
+		  Find Achmed for Owls - WITH CURSOR 2
 	  
 	  </div>
     <a-scene mindar-image="imageTargetSrc: mindmaps/achmed.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
@@ -36,8 +38,8 @@
                 </video>
       </a-assets>
 
-      <a-camera position="0 0 0" look-controls="enabled: false">
-	    <a-cursor></a-cursor>
+      <a-camera position="0 0 0" look-controls="enabled: false" mouse-cursor>
+	
 	    </a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
