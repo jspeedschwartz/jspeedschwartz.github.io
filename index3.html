@@ -4,28 +4,50 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+	<script>
+		AFRAME.registerComponent('play-pause', {
+			//commands go here for 'play-pause'
+			init: function(){ //run when object initializes
+				myvideo = document.querySelector('vid');
+				this.el.addEventListener('click', function() {
+					myvideo.play();	
+				});
+			}
+		});
+		
+	</script>
+	  
+	  
   </head>
   <body>
-	  <div style="position:absolute; top: 100px; left: 100px">CHickety CheCK</div>
-    <a-scene mindar-image="imageTargetSrc: mindmaps/logotarget.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+	  <div style="position:absolute; top: 100px; left: 100px">
+		  <button onClick="playvid()">Play</button>
+	  
+	  </div>
+    <a-scene mindar-image="imageTargetSrc: mindmaps/achmed.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
 	<img id="card" src="mindmaps/zoetrope.jpg" />
-	 <video src="fing.mp4"
-                    preload="auto" id="vid" response-type="arraybuffer" 
+	 <video src="owl.mp4"
+                    preload="auto" id="vid" response-type="arraybuffer"   loop="true"
                     crossorigin webkit-playsinline autoplay="false" playsinline>
                 </video>
-	<a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
         <!--a-plane src="#vid" position="0 0 0" height="1" width="1" rotation="0 0 0"></a-plane -->
-	      <a-video src="#vid" position="0 0 0" height="1.75" width="3" rotation="0 0 0"></a-video>
-        <!--a-gltf-model rotation="0 0 0 " position="0 0 0.1" scale="0.005 0.005 0.005" src="#avatarModel"
-          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-        -->
+	      <a-video src="#vid" position="0 0 0" height="1.75" width="3" rotation="0 0 0">
+	      <a-image id="clickme" src="#card" position="0 -1 0" scale="0.5 0.5 0.5" play-pause></a-image>
+	      </a-video>
       </a-entity>
     </a-scene>
   </body>
+	
+	<script>
+		function playvid(){
+			foo = document.getElementById("vid");
+			foo.play();
+		}
+	</script>
 </html>
