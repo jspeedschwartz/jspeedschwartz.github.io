@@ -10,7 +10,7 @@
 			init: function () { //run when object initializes
 				var myvideo = document.querySelector('#owlvid');
 				var myimg = document.querySelector('#clickme');
-				this.el.addEventListener('click', function () {
+				this.el.addEventListener('click', function (evt) {
 					myvideo.play();	
 					myimg.setAttribute('scale', '0.7 1.0 0.5');
 					
