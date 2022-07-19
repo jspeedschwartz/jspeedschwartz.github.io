@@ -13,7 +13,7 @@
     },
     init() {
       var b = true
-      var myvideo = document.querySelector('#owlvid');
+      var myvideo = document.querySelector('#achmedvid');
       this.el.addEventListener('click', (evt) => {
         myvideo.play();	
         console.log('I was clicked at: ', evt.detail.intersection.point);
@@ -28,7 +28,7 @@
   </head>
   <body>
 	  <div style="position:absolute; top: 100px; left: 100px; color:green;">
-		  CameraAdded -Corrected Path
+		 
 	  
 	  </div>
 	  
@@ -37,16 +37,21 @@
 
 	    <a-assets>
 	<img id="card" src="mindmaps/zoetrope.jpg" />
-	 <video src="owl.mp4"
-                    preload="auto" id="owlvid" response-type="arraybuffer"  loop="false"
+	 <video src="achmed.mp4"
+                    preload="auto" id="achmedvid" response-type="arraybuffer"  loop="false"
                     crossorigin webkit-playsinline autoplay="false" playsinline>
                 </video>
       </a-assets>
 
 
       <a-entity mindar-image-target="targetIndex: 0">
-	      <a-video class="clickable" src="#owlvid" position="0 0 0" height="1.25" width="2" rotation="0 0 0" marker>
+	      <a-video class="clickable" src="#achmedvid" position="0 0 0" height="1.25" width="2" rotation="0 0 0" marker>
 	      </a-video>
+	       <a-text value="Click on Video to Play Cあいうえお日本語"  scale="2 2 1" position="0 -2 0"></a-text>
+    </a-scene>
+  </body>
+</html>
+
       </a-entity>
     </a-scene>
   </body>
