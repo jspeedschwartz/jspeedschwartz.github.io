@@ -26,6 +26,13 @@
     }
   });
 
+	/*
+	My Animation Presets:
+	    animation="property: position; to: 0.05 0.05 0.05; dur: 2000; easing: easeInOutQuad; loop: true; dir: alternate" 
+		       animation_2="property: rotation; to: 0.05 0.05 0.05; dur: 2000; easing: easeInOutQuad; loop: true; dir: alternate" 
+		       
+		       */
+	
 </script>
 
 	  
@@ -42,7 +49,7 @@
 
 	    <a-assets>
 	<img id="card" src="mindmaps/zoetrope.jpg" />
-		    <img id="tot" src="totoro.gif" />
+		   <video id="totoro" src="totorovid.webm" loop="true" crossorigin webkit-playsinline autoplay="true" playsinline></video>
 	 <video src="achmed.mp4"
                     preload="auto" id="achmedvid" response-type="arraybuffer"  loop="false"
                     crossorigin webkit-playsinline autoplay="false" playsinline>
@@ -51,14 +58,15 @@
 
 
       <a-entity mindar-image-target="targetIndex: 0"  mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
-	     <a-plane height="1.5" width="2.5" position="0 0 0" color="#505050" ></a-plane>
+	     <a-plane height="2" width="2.5" position="0 -0.3 0" color="#505050" ></a-plane>
 		     
-	      <a-video class="clickable" src="#achmedvid" position="0 0 0.2" height="1.25" width="2" rotation="0 0 0" 
-		       animation="property: position; to: 0.05 0.05 0.05; dur: 2000; easing: easeInOutQuad; loop: true; dir: alternate" 
-		       animation_2="property: rotation; to: 0.05 0.05 0.05; dur: 2000; easing: easeInOutQuad; loop: true; dir: alternate" marker>
+	      <a-video class="clickable" src="#achmedvid" position="0 0 0.2" height="1.25" width="2" rotation="0 0 0" marker>
+	      </a-video>
+	      
+	      <a-video class="clickable" src="#totoro" position="1.5 0 0.2" height=".5" width=".5" rotation="0 0 0" marker>
 	      </a-video>
 	      <a-image src="#tot" position="0 1 0" scale= "0.3 0.3 0.3"></a-image>
-	       <a-text value="Click video to Play or Pause"  scale="0.5 0.5 1" position="-0.5 -0.5 0"></a-text>
+	       <a-text value="Click video to Play or Pause"  scale="0.5 0.5 1" position="-0.5 -1 0"></a-text>
     </a-scene>
   </body>
 </html>
