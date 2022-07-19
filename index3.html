@@ -18,9 +18,11 @@
       var myvideo = document.querySelector(this.data.video);
       this.el.addEventListener('click', (evt) => {
         if(b){
-	 myvideo.play();	
+	 myvideo.play();
+	 this.el.setAttribute('visible', false)
 	} else{
-	 myvideo.pause();	
+	 myvideo.pause();
+	 this.el.setAttribute('visible', true)
 	}
 	      b=!b;
         console.log('I was clicked at: ', evt.detail.intersection.point);
@@ -50,6 +52,7 @@
 
 	    <a-assets>
 	<img id="card" src="mindmaps/zoetrope.jpg" />
+	 <img id="playbutton" src="images/playbutton.png" />
 		   <video id="totoro" src="totorovid.webm" loop="true" crossorigin webkit-playsinline autoplay="true" playsinline></video>
 	 <video src="achmed.mp4"
                     preload="auto" id="achmedvid" response-type="arraybuffer"  loop="false"
@@ -59,13 +62,12 @@
 
 
       <a-entity mindar-image-target="targetIndex: 0"  mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
-	     <a-plane height="2.3" width="2.5" position="0 -0.3 0" color="#505050" ></a-plane>
+	     <a-plane height="2.3" width="2.5" position="0 -0.3 0" color="#505050" material="opacity: 0.7" ></a-plane>
 		     
-	      <a-video class="clickable" src="#achmedvid" position="0 0 0.2" height="1.25" width="2" rotation="0 0 0" marker="video: #achmedvid;" >
+	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height="1.25" width="2" rotation="0 0 0" >
 	      </a-video>
+	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.5" height="0.5"  marker="video: #achmedvid;"></a-image>
 	      
-	      <!--a-video class="clickable" src="#totoro" position="1.5 0 0.2" height=".5" width=".5" rotation="0 0 0" marker="video: #totoro">
-	      </a-video -->
 	       <a-entity
 	 class="clickable"
         material="shader: transparent-video; src: #totoro"
@@ -73,7 +75,8 @@
 		  position="1.5 0 0.2" height=".5" width=".5" rotation="0 0 0" marker="video: #totoro">
 		  
 		  </a-entity>
-	       <a-text value="Click video to Play or Pause"  scale="0.5 0.5 1" position="-0.5 -0.7 0"></a-text>
+	       <a-text value="Click video to Play or Pause"  scale="0.5 0.5 1" position="-0.5 -0.75 0.1"></a-text>
+	      
     </a-scene>
   </body>
 </html>
