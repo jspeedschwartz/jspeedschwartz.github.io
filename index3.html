@@ -11,11 +11,22 @@
 <script type="text/javascript">
   AFRAME.registerComponent('marker', {
     schema: {
-      video:{default: ''}
+      video:{default: ''},
+	mytarget:{default:''}	    
     },
     init() {
-      var b = true
+      var b = true;
+      var mytarget = document.querySelector(this.data.mytarget);
       var myvideo = document.querySelector(this.data.video);
+      var mybutton = this.el;	    
+	mytarget.addEventListener("targetLost", event => {
+	 myvideo.pause();	
+  	console.log("target lost");
+	mybutton.setAttribute('visible', true);
+	b= true;	
+	});
+	    
+	    
       this.el.addEventListener('click', (evt) => {
         if(b){
 	 myvideo.play();
@@ -29,6 +40,10 @@
       });
     }
   });
+	
+
+
+	
 
 	/////LINKS------------------------------
 AFRAME.registerComponent('weblink', {
@@ -69,8 +84,7 @@ AFRAME.registerComponent('weblink', {
                 </video>
       </a-assets>
 
-
-      <a-entity mindar-image-target="targetIndex: 0"  mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
+      <a-entity mindar-image-target="targetIndex: 0" id="achmedmarker" mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
 	     <a-plane height="2.3" width="2.5" position="0 -0.3 0" color="#505050" material="opacity: 0.7" ></a-plane>
 		     
 	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height="1.25" width="2" rotation="0 0 0" >
