@@ -10,7 +10,7 @@
       //const bbox = document.querySelector('a-box');
       var b = true
       var myvideo = document.querySelector('#owlvid');
-      this.el.addEventListener('click', () => {
+      this.el.addEventListener('click', (evt) => {
       /*  if (b) {
           this.el.setAttribute('color', "#006699");
         } else {
@@ -47,7 +47,7 @@
   <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
   <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
   
-  <a-video src="#owlvid" position="0 2 -6" height="1.25" width="2" rotation="0 0 0" marker>
+  <a-video src="#owlvid" position="0 5 -6" height="1.25" width="2" rotation="0 0 0" marker>
 	      <!--a-image id="clickme" src="#card" position="0 -1.5 0" scale="0.5 0.3 0.5" play-pause></a-image -->
 	      </a-video>
   <a-sky color="#ECECEC"></a-sky>
