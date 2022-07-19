@@ -30,13 +30,21 @@
     }
   });
 
-	/*
-	My Animation Presets:
-	    animation="property: position; to: 0.05 0.05 0.05; dur: 2000; easing: easeInOutQuad; loop: true; dir: alternate" 
-		       animation_2="property: rotation; to: 0.05 0.05 0.05; dur: 2000; easing: easeInOutQuad; loop: true; dir: alternate" 
-		       
-		       */
+	/////LINKS------------------------------
+AFRAME.registerComponent('link', {
+    schema: {
+      url:{default: ''}
+    },
+ init() {
+
+      this.el.addEventListener('click', (evt) => {
+         window.open(this.data.url, "_blank");
+        console.log('A Link was clicked at: ', evt.detail.intersection.point);
+      });
+    }
+  });
 	
+
 </script>
 
 	  
@@ -52,7 +60,8 @@
 
 	    <a-assets>
 	<img id="card" src="mindmaps/zoetrope.jpg" />
-	 <img id="playbutton" src="images/playbutton.png" />
+	<img id="playbutton" src="images/openbutton.png" />
+	<img id="open" src="images/playbutton.png" />
 		   <video id="totoro" src="totorovid.webm" loop="true" crossorigin webkit-playsinline autoplay="true" playsinline></video>
 	 <video src="achmed.mp4"
                     preload="auto" id="achmedvid" response-type="arraybuffer"  loop="false"
@@ -66,7 +75,7 @@
 		     
 	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height="1.25" width="2" rotation="0 0 0" >
 	      </a-video>
-	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.5" height="0.5"  marker="video: #achmedvid;"></a-image>
+	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.8" height="0.8"  marker="video: #achmedvid;"></a-image>
 	      
 	       <a-entity
 	 class="clickable"
@@ -75,6 +84,7 @@
 		  position="1.5 0 0.2" height=".5" width=".5" rotation="0 0 0" marker="video: #totoro">
 		  
 		  </a-entity>
+	       <a-image class="clickable" src="#open" position="0 -1.3 0.1"  link="url: http://jeremyspeedschwartz.com;"></a-image>
 	       <a-text value="Click video to Play or Pause"  scale="0.5 0.5 1" position="-0.5 -0.75 0.1"></a-text>
 	      
     </a-scene>
