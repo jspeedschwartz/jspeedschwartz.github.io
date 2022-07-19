@@ -11,9 +11,9 @@
       var b = false
       this.el.addEventListener('click', () => {
         if (b) {
-          this.setAttribute('color', "#006699");
+          this.el.setAttribute('color', "#006699");
         } else {
-          this.setAttribute('color', "#4CC3D9");
+          this.el.setAttribute('color', "#4CC3D9");
         }
         b = !b;
         console.log('clicked');
