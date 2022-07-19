@@ -15,7 +15,12 @@
       var b = true
       var myvideo = document.querySelector('#achmedvid');
       this.el.addEventListener('click', (evt) => {
-        myvideo.play();	
+        if(b){
+	 myvideo.play();	
+	} else{
+	 myvideo.pause();	
+	}
+	      b=!b;
         console.log('I was clicked at: ', evt.detail.intersection.point);
       });
     }
@@ -28,7 +33,7 @@
   </head>
   <body>
 	  <div style="position:absolute; top: 100px; left: 100px; color:green;">
-		 Tolerances-animation floating all around
+		 Tolerances-animation toggle
 	  
 	  </div>
 	  
