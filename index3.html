@@ -67,7 +67,7 @@ AFRAME.registerComponent('weblink', {
   </head>
   <body>
 	  <div style="position:absolute; top: 100px; left: 100px; color:green;">
-	  Linketty Link
+	  Linketty Lunk
 	  </div>
 	  
     <a-scene mindar-image="imageTargetSrc: mindmaps/achmed4.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
@@ -89,13 +89,13 @@ AFRAME.registerComponent('weblink', {
 		     
 	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height="1.25" width="2" rotation="0 0 0" >
 	      </a-video>
-	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.8" height="0.8"  marker="video: #achmedvid;"></a-image>
+	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.8" height="0.8"  marker="video: #achmedvid; mytarget: #achmedmarker;"></a-image>
 	      
 	       <a-entity
 	 class="clickable"
         material="shader: transparent-video; src: #totoro"
         geometry="primitive: plane;"
-		  position="1.5 0 0.2" height=".5" width=".5" rotation="0 0 0" marker="video: #totoro">
+		  position="1.5 0 0.2" height=".5" width=".5" rotation="0 0 0" marker="video: #totoro; mytarget: #achmedmarker">
 		  
 		  </a-entity>
 
