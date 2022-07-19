@@ -31,8 +31,10 @@
 		  CameraAdded -Corrected Path
 	  
 	  </div>
-    <a-scene cursor="rayOrigin: mouse" mindar-image="imageTargetSrc: mindmaps/achmed.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+	  
+    <a-scene mindar-image="imageTargetSrc: mindmaps/achmed.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+     <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
+
 	    <a-assets>
 	<img id="card" src="mindmaps/zoetrope.jpg" />
 	 <video src="owl.mp4"
@@ -43,7 +45,7 @@
 
 
       <a-entity mindar-image-target="targetIndex: 0">
-	      <a-video src="#owlvid" position="0 0 0" height="1.25" width="2" rotation="0 0 0" marker>
+	      <a-video class="clickable" src="#owlvid" position="0 0 0" height="1.25" width="2" rotation="0 0 0" marker>
 	      </a-video>
       </a-entity>
     </a-scene>
