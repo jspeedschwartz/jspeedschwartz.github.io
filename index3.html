@@ -18,9 +18,11 @@
       var myvideo = document.querySelector(this.data.video);
       this.el.addEventListener('click', (evt) => {
         if(b){
-	 myvideo.play();	
+	 myvideo.play();
+	 this.el.visible = false;
 	} else{
-	 myvideo.pause();	
+	 myvideo.pause();
+	 this.el.visible = true;
 	}
 	      b=!b;
         console.log('I was clicked at: ', evt.detail.intersection.point);
@@ -60,11 +62,11 @@
 
 
       <a-entity mindar-image-target="targetIndex: 0"  mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
-	     <a-plane height="2.3" width="2.5" position="0 -0.3 0" color="#505050" ></a-plane>
+	     <a-plane height="2.3" width="2.5" position="0 -0.3 0" color="#505050" material="opacity: 0.7" ></a-plane>
 		     
-	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height="1.25" width="2" rotation="0 0 0" marker="video: #achmedvid;" >
+	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height="1.25" width="2" rotation="0 0 0" >
 	      </a-video>
-	      <a-image src="#playbutton" position="0 0 0.2" width="0.5" height="0.5"></a-image>
+	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.5" height="0.5"  marker="video: #achmedvid;"></a-image>
 	      
 	       <a-entity
 	 class="clickable"
