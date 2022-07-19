@@ -28,7 +28,7 @@
   </head>
   <body>
 	  <div style="position:absolute; top: 100px; left: 100px; color:green;">
-		 
+		 Tolerances
 	  
 	  </div>
 	  
@@ -44,10 +44,10 @@
       </a-assets>
 
 
-      <a-entity mindar-image-target="targetIndex: 0">
+      <a-entity mindar-image-target="targetIndex: 0"  mindar-image="filterMinCF:0.1; filterBeta: 10; missTolerance: 10">
 	      <a-video class="clickable" src="#achmedvid" position="0 0 0" height="1.25" width="2" rotation="0 0 0" marker>
 	      </a-video>
-	       <a-text value="Click on Video to Play あいうえお日本語"  scale="0.5 0.5 1" position="0 -1 0"></a-text>
+	       <a-text value="Click on Video to Play"  scale="0.5 0.5 1" position="-0.5 -1 0"></a-text>
     </a-scene>
   </body>
 </html>
