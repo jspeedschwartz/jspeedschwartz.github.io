@@ -19,21 +19,14 @@ AFRAME.registerComponent('cursor-listener', {
     </script>
   </head>
   <body>
-<a-scene>
- <a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>
-
-  
-  <a-sky color="#ECECEC"></a-sky>
-  
 <a-entity camera look-controls>
   <a-entity cursor="fuse: true; fuseTimeout: 500"
             position="0 0 -1"
             geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-            material="color: black; shader: flat">
+            material="color: green; shader: flat">
   </a-entity>
 </a-entity>
-  
-  
-</a-scene>
+
+<a-entity id="box" cursor-listener geometry="primitive: box" material="color: blue"></a-entity>
   </body>
 </html>
