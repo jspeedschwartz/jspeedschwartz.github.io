@@ -70,7 +70,7 @@ AFRAME.registerComponent('weblink', {
 	  Linketty Lunk
 	  </div>
 	  
-    <a-scene mindar-image="imageTargetSrc: mindmaps/achmed4.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="imageTargetSrc: mindmaps/poster.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
 
 	    <a-assets>
@@ -102,9 +102,6 @@ AFRAME.registerComponent('weblink', {
 	       <a-image class="clickable" src="#open" position="0 -1.2 0.1" scale="1 0.3 1" weblink="url: http://www.google.com;"></a-image>
 	       <a-text value="Click video to Play or Pause"  scale="0.5 0.5 1" position="-0.5 -0.75 0.1"></a-text>
 	      
-    </a-scene>
-  </body>
-</html>
 
       </a-entity>
     </a-scene>
