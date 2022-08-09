@@ -82,20 +82,20 @@ AFRAME.registerComponent('weblink', {
                     preload="auto" id="achmedvid" response-type="arraybuffer"  loop="false"
                     crossorigin webkit-playsinline autoplay="false" playsinline>
                 </video>
+		    
+		    <video src="IA_Goodbye2020_JSS.mp4"
+                    preload="auto" id="bye2020" response-type="arraybuffer"  loop="false"
+                    crossorigin webkit-playsinline autoplay="false" playsinline>
+                </video>
       </a-assets>
 
       <a-entity mindar-image-target="targetIndex: 0" id="achmedmarker" mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
-	     <a-plane height="2.3" width="2.5" position="0 -0.3 0" color="#505050" material="opacity: 0.7" ></a-plane>
+	     <a-plane height="1.5" width="1.8" position="0 -0.2 0" color="#505050" material="opacity: 0.7" ></a-plane>
 		     
-	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height="1.25" width="2" rotation="0 0 0" >
+	      <a-video class="clickable" src="#achmedvid" position="0 0 0.1" height=".9" width="1.44" rotation="0 0 0" >
 	      </a-video>
 	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.8" height="0.8"  marker="video: #achmedvid; mytarget: #achmedmarker;"></a-image>
 	      
-	       <a-entity
-	 class="clickable"
-        material="shader: transparent-video; src: #totoro"
-        geometry="primitive: plane;"
-		  position="1.5 0 0.2" height=".5" width=".5" rotation="0 0 0" marker="video: #totoro; mytarget: #achmedmarker">
 		  
 		  </a-entity>
 
@@ -104,6 +104,29 @@ AFRAME.registerComponent('weblink', {
 	      
 
       </a-entity>
+	  <a-entity mindar-image-target="targetIndex: 1" id="secondmarker" mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
+	  	       <a-entity class="clickable"  material="shader: transparent-video; src: #totoro"
+        geometry="primitive: plane;"
+		  position="0 0 0" height="1" width="1" rotation="0 0 0" marker="video: #totoro; mytarget: #secondmarker">
+	</a-entity>
+
+		  
+	<a-entity mindar-image-target="targetIndex: 2" id="thirdmarker" mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
+	     <a-plane height="1.5" width="1.8" position="0 -0.2 0" color="#505050" material="opacity: 0.7" ></a-plane>
+		     
+	      <a-video class="clickable" src="#bye2020" position="0 0 0.1" height=".9" width="0.9" rotation="0 0 0" >
+	      </a-video>
+	      <a-image class="clickable" src="#playbutton" position="0 0 0.2" width="0.8" height="0.8"  marker="video: #bye2020; mytarget: #thirdmarker;"></a-image>
+	      
+		  
+		  </a-entity>
+
+	       <a-image class="clickable" src="#open" position="0 -1.2 0.1" scale="1 0.3 1" weblink="url: http://www.google.com;"></a-image>
+	       <a-text value="Click video to Play or Pause"  scale="0.5 0.5 1" position="-0.5 -0.75 0.1"></a-text>
+	      
+
+      </a-entity>
+		  
     </a-scene>
   </body>
 	
