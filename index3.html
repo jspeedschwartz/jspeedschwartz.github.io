@@ -77,16 +77,20 @@ AFRAME.registerComponent('weblink', {
 	<img id="card" src="mindmaps/zoetrope.jpg" />
 	<img id="open" src="images/openbutton.png" />
 	<img id="playbutton" src="images/playbutton.png" />
-	<img id="pain" src="Painting-smol.jpg />
+
 		   <video id="totoro" src="totorovid.webm" loop="true" crossorigin webkit-playsinline autoplay="true" playsinline></video>
 	 <video src="achmed.mp4"
                     preload="auto" id="achmedvid" response-type="arraybuffer"  loop="false"
                     crossorigin webkit-playsinline autoplay="false" playsinline>
                 </video>
+		     <video src="owl.mp4"
+                    preload="auto" id="achmedvid" response-type="arraybuffer"  loop="false"
+                    crossorigin webkit-playsinline autoplay="true" playsinline>
+                </video>
 		    
 		    <video src="IA_Goodbye2020_JSS.mp4"
                     preload="auto" id="bye2020" response-type="arraybuffer"  loop="false"
-                    crossorigin webkit-playsinline autoplay="false" playsinline>
+                    crossorigin webkit-playsinline autoplay="true" playsinline>
                 </video>
       </a-assets>
 
@@ -121,7 +125,8 @@ AFRAME.registerComponent('weblink', {
 		  
 		  
 	 <a-entity mindar-image-target="targetIndex: 3" id="fourthmarker" mindar-image="filterMinCF: 0.1; filterBeta: 0.01; missTolerance: 300; warmupTolerance: 1;">
-	  	        <a-image  src="#pain" position="0 0 0.2" width="0.8" height="0.8"></a-image>
+	  	        <a-video " src="#owl" position="0 0 0.1" height=".9" width="0.9" rotation="0 0 0" >
+	      </a-video>
 	</a-entity>
 															 
 
