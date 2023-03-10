@@ -8,6 +8,7 @@
       var but = document.getElementById("but");
       var video = document.getElementById("vid");
       var mediaDevices = navigator.mediaDevices;
+      var gogo = document.getElementById("gogo");
       vid.muted = true;
       but.addEventListener("click", () => {
       
@@ -15,7 +16,7 @@
         mediaDevices
           .getUserMedia({
             video: true,
-            audio: true,
+            //audio: true,
           })
           .then((stream) => {
       
@@ -27,31 +28,37 @@
           })
           .catch(alert);
       });
+       gogo.addEventListener("click", () => {
+        
     });
 </script>
 <style>
-    div {
-      width: 500px;
-      height: 400px;
+    #vidholder {
+      width: 960px;
+      height: 540px;
       border: 2px solid black;
       position: relative;
     }
-    video {
-      width: 500px;
-      height: 400px;
+    #vid {
+      width: 960px;
+      height: 540px;
       object-fit: cover;
     }
 </style>
 
 </head>
 <body>
-<div>
+<div id="vidholder">
     <video id="vid"></video>
 </div>
 <br />
 <button id="but" autoplay>
     Open WebCam
 </button>
+    <br>
+    <button id="gogo"> 
+        Take Picture!
+    </button>
 
 
 </body>
