@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script>
+      const canv = document.getElementById("canv");
+      const ctx = canv.getContext("2d");
+
+      // Non-rotated rectangle
+      ctx.fillStyle = "gray";
+      ctx.fillRect(80, 60, 140, 30);
+
+      // Matrix transformation
+      ctx.translate(150, 75);
+      ctx.rotate(30* Math.PI / 180);
+      ctx.translate(-150, -75);
+
+       // Rotated rectangle
+        ctx.fillStyle = "red";
+        ctx.fillRect(80, 60, 140, 30);
+      
+    </script>
+    
+    
+  </head>
+  
+  
+  
+  <body>
+    <canvas id="canv">
+      
+    </canvas>
+    
+  </body>
+  
+  
+  
+  
+</html>
